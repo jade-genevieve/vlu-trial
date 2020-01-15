@@ -1,8 +1,21 @@
 <div class="container">
-    <h1>🚘 VEHICLE LOOKUP 🚘</h1>
-    <form id="vehicle-lookup" action = "/vrm" method = "post">
-        Vehicle Registration: <input type="text" name="vrm" required>  <br>
-        <input id="submit-button" type="submit" value="Submit">
-    </form>
+    
+    <div class="container">       
+        <h1>🚘 VEHICLE LOOKUP 🚘</h1>
+        <form id="vehicle-lookup" action = "/vrms" method = "post">
+            Vehicle Registration: <input type="text" name="vrm" required>  <br>
+            <input id="submit-button" type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <div>
+        <ul class="vrms">
+        {{#each vrms}}
+        <li>{{this.vrm}}</li>
+        {{/each}}
+        </ul>
+    </div>
+
 </div>
+    
   
