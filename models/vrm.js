@@ -1,15 +1,22 @@
-var searches = [];
+var mongoose = require('mongoose');
 
-var VRM = function (vrm) {
-    this.vrm = vrm;
-};
+// var searches = [];
 
-VRM.prototype.save = function() {
-    searches.push(this);
-}
+var VRMSchema = new mongoose.Schema({
+    vrm: String
+})
 
-VRM.all = function() {
-    return searches;
-}
+// var VRM = function (vrm) {
+//     this.vrm = vrm;
+// };
+
+// VRM.prototype.save = function() {
+//     searches.push(this);
+// }
+
+// VRM.all = function() {
+//     return searches;
+// }
+var VRM = mongoose.model('VRM', VRMSchema);
 
 module.exports = VRM;
