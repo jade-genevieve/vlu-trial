@@ -11,7 +11,8 @@
     <div class="search_list">
         <ul class="no_bullet">
         {{#each vrms}}
-        <li class="vehicle">🚗 - {{this.vrm}}</li>
+        <li class="vehicle"><h3>🚗 - {{this.vrm}}</h3></li>
+        <p>Make: {{this.data.Make}} Model: {{this.data.Model}} Manufactured: {{this.data.ManufacturedDate}} </p>
         {{/each}}
         </ul>
     </div>

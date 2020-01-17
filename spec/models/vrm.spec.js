@@ -1,5 +1,6 @@
-require('../db_helper')
 var mongoose = require('mongoose');
+
+require('../db_helper')
 const VRM  = require('../../models/vrm.js');
 
 describe('VRM model', function() { 

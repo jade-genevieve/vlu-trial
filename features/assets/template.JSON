@@ -1,0 +1,38 @@
+{
+    "VehicleType": "result/dvla/vehicle/body_class",
+    "AbiCode": "result/dvla/match/model_variants/variant/abi_code",
+    "Make": "result/dvla/match/model_variants/variant/make",
+    "Model": "result/dvla/match/model_variants/variant/model",
+    "Doors": "result/dvla/match/model_variants/variant/door_count",
+    "InsuranceGroup": "result/dvla/security/detail/group_ratings/group_rating/group_rating/rating",
+    "RegistrationLetter": "result/dvla/vehicle/vrm",
+    "BodyType": {
+        "dataCode": "result/dvla/match/model_variants/variant/type",
+        "displayText": "result/mvris/mvris_record/body_desc"
+    },
+    "FuelType": {
+        "dataCode": "result/dvla/vehicle/fuel_type",
+        "displayText": "result/dvla/vehicle/fuel_type"
+    },
+    "EngineSize": "result/dvla/vehicle/cc",
+    "SecurityStatus": {
+        "dataCode": "result/security/detail/security_status",
+        "displayText": "result/security/detail/security_status_description"
+    },
+    "CurrentValue": "result/valuaton/valuation_record/forecourt_sale",
+    "PayloadWeight": "result/dvla/vehicle/max_tech_mass",
+    "DriveSide": "result/dvla/match/drive",
+    "Seats": {
+        "dataCode": "result/dvla/match/seat_count",
+        "displayText": "result/dvla/match/seat_count"
+    },
+    "GrossWeight": "result/dvla/match/gross_weight",
+    "Import": "result/dvla/vehicle/imported_uk",
+    "ImportNI": "result/dvla/vehicle/imported_ni",
+    "Transmission": {
+        "dataCode": "result/mvris/mvris_record/transmission",
+        "displayText": "result/mvris/mvris_record/transmission"
+    },
+    "RegistrationDate": "result/dvla/match/registration_date",
+    "ManufacturedDate": "result/dvla/match/manufactured_date"
+}

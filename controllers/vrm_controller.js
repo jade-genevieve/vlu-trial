@@ -1,6 +1,8 @@
 var VRM = require('../models/vrm');
+const { parsedAPIResponse } = require('../utils/call-jarvis/index.js');
 
 var VRMController = {
+
 
     Index: function(req, res, next) {
         VRM.find(function(err, vrms) {
@@ -12,20 +14,32 @@ var VRMController = {
         });
     },
 
-    Create: function(req, res, next) {
-        var tidyVRM = req.body
-        tidyVRM.vrm = tidyVRM.vrm.replace(/\s+/g, '').toUpperCase()
-        console.log(tidyVRM);
-        var query = new VRM( tidyVRM );
+    Create: async function(req, res, next) {
+        var searchedVRM = req.body
+        searchedVRM.vrm = searchedVRM.vrm.replace(/\s+/g, '').toUpperCase()
+        console.log("got body", searchedVRM.vrm);
+
+        //check db for existing search
         
-        console.log('Searching for ', query );
-        
+        //call CDL with searched VRM
+        console.log("Calling 3rd party API...")
+        searchedVRM.data = await parsedAPIResponse(searchedVRM.vrm, function(err, data){
+            if(err){
+                res.json(err);
+            }
+            console.log("Data received")
+            res.json({})
+        });
+
+
+
+        console.log("Preparing to save to database", searchedVRM);
+        var query = new VRM( searchedVRM );         
         query.save(function(err){
             if (err) { throw err;}
 
             console.log('Saved.')
             res.status(201).redirect('/');
-
         });
     }
 

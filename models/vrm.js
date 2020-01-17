@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 var VRMSchema = new mongoose.Schema({
-    vrm: String
+    vrm: String,
+    data: Object,
 })
 
 var VRM = mongoose.model('VRM', VRMSchema);
